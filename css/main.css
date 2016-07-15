@@ -1,0 +1,432 @@
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+--- min-width: 250px ---
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media screen and (min-width: 250px){
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  @font-face {
+    font-family:"Myriad Pro Light";
+    src: url(../font/MyriadPro-Light.otf);
+  }
+
+  html{
+    box-sizing: border-box;
+    /*height: 100%;*/
+    width: 100%;
+  }
+
+  *:before,*:after{
+    box-sizing: inherit;
+  }
+
+  body{
+    font-family: Myriad Pro Light,'Hind', sans-serif;
+    height: 100%;
+    overflow-x:hidden;
+    font-size: .8em;
+  }
+
+  .container ul,.container li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  a{
+    color: grey;
+    text-decoration: none;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX --- display flex --- XXXXXXXXXXXXXXXXXXXXXXXX*/
+  .container,nav li,.reseaux,nav,.second_menu{
+    display: flex;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX --- container --- XXXXXXXXXXXXXXXXXXXXXXXX*/
+  .container{
+    width: 100%;
+    height: 100vh;
+    background: url("../img/D&M.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:bottom;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  h1{
+    padding: .5em;
+    background-color: rgba(0,0,0,0.6);
+    margin: 0 auto;
+    align-self: center;
+    text-align: center;
+    color: white;
+  }
+  .menu{
+    width: 45%;
+    height: 100%;
+    opacity: .9;
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  nav{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-origin: left;
+    transform: perspective(500px) rotate3d(0, 1, 0, 90deg);
+    background-color: #303030;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-start;
+  }
+
+
+  .container li{
+    align-items: stretch;
+    color: grey;
+    /*border-bottom: 1px solid greenyellow;*/
+  }
+
+  .container ul a{
+    display: block;
+    padding: .5em 0;
+    margin: 0 auto;
+    /*width: 50%;*/
+    border-top: 1px solid grey;
+  }
+
+  nav .home::before,.albums::before,.contact::before,.about::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    /*border: 1px solid red;*/
+  }
+
+  .home::before{
+    background-image: url("../img/home.png");
+    background-size: cover;
+  }
+
+  .albums::before{
+    background-image: url("../img/albums.png");
+    background-size: cover;
+  }
+
+  .contact::before{
+    background-image: url("../img/contact.png");
+    background-size: cover;
+  }
+
+  .about::before{
+    background-image: url("../img/info.png");
+    background-size: cover;
+  }
+
+  /*.container nav li :hover{*/
+    /* 1px solid white;*/
+  /*}*/
+
+  .container li :hover, .second_menu li:hover{
+    color: white;
+  }
+
+  .bouton{
+    margin: 2em;
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    z-index: 2;
+    background-image: url("../img/menu48.png");
+  }
+
+  nav h3,.second_menu h4{
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    border-bottom: 3px solid white;
+    width: 70%;
+  }
+
+  .reseaux{
+    margin: 3em auto;
+    width: 100%;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-self: flex-end;
+  }
+
+  .reseaux img{
+    width: 20px;
+    height: 20px;
+  }
+
+  .reseaux a{
+    border-bottom: none;
+  }
+
+
+
+  .down{
+    /*color: red;*/
+    align-self: flex-end;
+    margin: 0 auto;
+    padding: 0 1em;
+    border: 1px solid rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+  }
+
+  .album_title{
+      display: none;
+  }
+
+  .album_title  li a, .sous_albums li a{
+    border-top: none;
+    padding: .3em 0 .5em;
+  }
+
+
+
+  /*XXXXXXXXXXXXXXXXXXXXXX --- btn menu --- XXXXXXXXXXXXXXXXXXXXXXXX*/
+  .bouton_menu{
+    margin: 1em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 3;
+    /*align-self: flex-end;*/
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  .burger{
+    margin: 0 .5em;
+    width:1.5em;
+    height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .burger span{
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  .bouton_menu h3{
+    color: white;
+    margin: .5em;
+    text-transform: uppercase;
+  }
+
+  .reseaux div{
+    display: none;
+    font-size: .8em;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX --- second menu --- XXXXXXXXXXXXXXXXXXXXXXXX*/
+  .menu_album,.menu_contact,.menu_about{
+    display: none;
+  }
+
+  .second_menu{
+    color: white;
+    position: fixed;
+    transform-origin: left;
+    transform: perspective(500px) rotate3d(0, 1, 0, 90deg);
+    background-color: #303030;
+    opacity: .9;
+    z-index: 2;
+    left: 45%;
+    /*width: 25%;*/
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .second_menu article{
+    width: 100%;
+  }
+
+  .second_menu p{
+    font-size: .8em;
+    color: white;
+  }
+
+  .mail{
+    color: grey;
+  }
+
+  .second_menu h4{
+    /*width: 30%;*/
+    border:none;
+    margin-bottom: 1em;
+  }
+
+  .second_menu li{
+    margin: .5em 0;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX --- btn close --- XXXXXXXXXXXXXXXXXXXXXXXX*/
+  .btn_close,.btn_back{
+    margin: .5em;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn_close span,.btn_back span{
+    height: 0;
+    border-radius: 5px;
+    border: 2px solid white;
+  }
+
+  .btn_close span{
+    display: none;
+  }
+
+  .bar_close1,.bar_close3{
+    width: 100%;
+    position: relative;
+  }
+
+  .bar_close2{
+    width: 100%;
+  }
+
+  h5{
+    color:white;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX --- btn back --- XXXXXXXXXXXXXXXXXXXXXXXX*/
+  .bar_back1,.bar_back3{
+    position: relative;
+    border: 2px solid white;
+  }
+
+  .bar_back1{
+    width: 25%;
+    top:6px;
+    transform: rotate3d(0, 0, 1, 135deg);
+  }
+
+  .bar_back2{
+    width: 60%;
+    border: 2px solid white;
+  }
+
+  .bar_back3{
+    width: 25%;
+    top:-6px;
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX --- section --- XXXXXXXXXXXXXXXXXXXXXXXX*/
+  .hidden{
+    /*visibility: hidden;*/
+    display:none;
+  }
+
+  .grid{
+    width: 101%;
+    /*background:red;*/
+    margin: 0 auto;
+  }
+
+  .grid div{
+    width: 100%;
+    /*float: left;*/
+    /*background:red;*/
+    margin-top:5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .grid a{
+    width: 100%;
+  }
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+}/*fin media queries 300px*/
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+--- min-width: 640px ---
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media screen and (min-width: 640px){
+  body{
+    font-size: 1.2em;
+  }
+    .album_title ul li, .sous_albums ul li{
+        font-size: .8em;
+    }
+  .menu{
+    width: 30%;
+  }
+
+  .second_menu{
+    left: 30%;
+  }
+
+  .map{
+    height: 12em;
+  }
+
+  .reseaux img{
+    width: 32px;
+    height: 32px;
+  }
+
+  .grid div{
+    width: 31.8%;
+  }
+
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+--- min-width: 1100px ---
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media screen and (min-width: 850px){
+  .grid div{
+    width: 32.2%;
+  }
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+--- min-width: 1100px ---
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+@media screen and (min-width: 1100px){
+  .menu{
+    width: 20%;
+  }
+
+  .second_menu{
+    left: 20%;
+  }
+
+  .grid div{
+    width:24%;
+    margin-top: 1em;
+  }
+
+  .grid a{
+    display: flex;
+    align-items: center;
+  }
+
+}
